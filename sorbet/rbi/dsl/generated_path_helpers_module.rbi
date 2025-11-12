@@ -40,6 +40,12 @@ module GeneratedPathHelpersModule
   def events_path(*args); end
 
   sig { params(args: T.untyped).returns(String) }
+  def holiday_path(*args); end
+
+  sig { params(args: T.untyped).returns(String) }
+  def holidays_path(*args); end
+
+  sig { params(args: T.untyped).returns(String) }
   def new_admin_event_path(*args); end
 
   sig { params(args: T.untyped).returns(String) }
@@ -50,6 +56,9 @@ module GeneratedPathHelpersModule
 
   sig { params(args: T.untyped).returns(String) }
   def new_rails_conductor_inbound_email_source_path(*args); end
+
+  sig { params(args: T.untyped).returns(String) }
+  def new_registration_path(*args); end
 
   sig { params(args: T.untyped).returns(String) }
   def new_session_path(*args); end
@@ -140,6 +149,9 @@ module GeneratedPathHelpersModule
 
   sig { params(args: T.untyped).returns(String) }
   def rails_storage_redirect_path(*args); end
+
+  sig { params(args: T.untyped).returns(String) }
+  def registrations_path(*args); end
 
   sig { params(args: T.untyped).returns(String) }
   def revert_admin_event_path(*args); end

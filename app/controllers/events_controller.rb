@@ -4,7 +4,7 @@ class EventsController < ApplicationController
   allow_unauthenticated_access
 
   def index
-    @events = Event.published.includes(:event_times).by_earliest_date
+    @events = Event.published.includes(:event_times).sort_by(&:earliest_start)
 
     respond_to do |format|
       format.html # Renders the main site

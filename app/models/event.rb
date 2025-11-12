@@ -11,12 +11,6 @@ class Event < ApplicationRecord
   validates :event_times, presence: true
 
   scope :published, -> { where(published: true) }
-  scope :by_earliest_date, -> {
-    joins(:event_times)
-      .select('events.*, MIN(event_times.start_time) as earliest_start')
-      .group('events.id')
-      .order('earliest_start ASC')
-  }
 
   after_save :create_version_snapshot
   before_destroy :create_deletion_snapshot

@@ -29,6 +29,9 @@ Rails.application.routes.draw do
   end
 
   # Public site
+  resources :registrations, only: [:new, :create]
   resources :events, only: [:index, :show]
+  get "holiday" => 'events#index'
+  get "holidays" => 'events#index'
   root 'events#index'
 end

@@ -40,6 +40,12 @@ module GeneratedUrlHelpersModule
   def events_url(*args); end
 
   sig { params(args: T.untyped).returns(String) }
+  def holiday_url(*args); end
+
+  sig { params(args: T.untyped).returns(String) }
+  def holidays_url(*args); end
+
+  sig { params(args: T.untyped).returns(String) }
   def new_admin_event_url(*args); end
 
   sig { params(args: T.untyped).returns(String) }
@@ -50,6 +56,9 @@ module GeneratedUrlHelpersModule
 
   sig { params(args: T.untyped).returns(String) }
   def new_rails_conductor_inbound_email_url(*args); end
+
+  sig { params(args: T.untyped).returns(String) }
+  def new_registration_url(*args); end
 
   sig { params(args: T.untyped).returns(String) }
   def new_session_url(*args); end
@@ -140,6 +149,9 @@ module GeneratedUrlHelpersModule
 
   sig { params(args: T.untyped).returns(String) }
   def rails_storage_redirect_url(*args); end
+
+  sig { params(args: T.untyped).returns(String) }
+  def registrations_url(*args); end
 
   sig { params(args: T.untyped).returns(String) }
   def revert_admin_event_url(*args); end
