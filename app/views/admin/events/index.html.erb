@@ -1,0 +1,57 @@
+<!-- app/views/admin/events/index.html.erb -->
+<div class="admin-header">
+  <h1>Manage Events</h1>
+  <%= link_to 'New Event', new_admin_event_path, class: 'btn btn-primary' %>
+</div>
+
+<div class="events-list">
+  <% if @events.any? %>
+    <table class="admin-table">
+      <thead>
+        <tr>
+          <th>Event Name</th>
+          <th>Location</th>
+          <th>Times</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @events.each do |event| %>
+          <tr class="<%= 'unpublished' unless event.published %>">
+            <td><strong><%= event.name %></strong></td>
+            <td><%= event.location %></td>
+            <td>
+              <% event.event_times.each do |et| %>
+                <div class="event-time-row">
+                  <%= et.start_time.strftime('%b %d, %Y %I:%M %p') %>
+                  <% if et.end_time %>
+                    - <%= et.end_time.strftime('%I:%M %p') %>
+                  <% end %>
+                </div>
+              <% end %>
+            </td>
+            <td>
+              <span class="status-badge <%= event.published ? 'published' : 'draft' %>">
+                <%= event.published ? 'Published' : 'Draft' %>
+              </span>
+            </td>
+            <td class="actions">
+              <%= link_to 'View', admin_event_path(event), class: 'btn btn-sm' %>
+              <%= link_to 'Edit', edit_admin_event_path(event), class: 'btn btn-sm btn-secondary' %>
+              <%= link_to 'History', versions_admin_event_path(event), class: 'btn btn-sm btn-info' %>
+              <%= button_to 'Delete', admin_event_path(event), 
+                  method: :delete, 
+                  data: { confirm: 'Are you sure?' }, 
+                  class: 'btn btn-sm btn-danger' %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% else %>
+    <div class="empty-state">
+      <p>No events yet. <%= link_to 'Create your first event', new_admin_event_path %></p>
+    </div>
+  <% end %>
+</div>

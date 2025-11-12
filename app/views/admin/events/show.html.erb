@@ -1,0 +1,75 @@
+<!-- app/views/admin/events/show.html.erb -->
+<div class="admin-header">
+  <h1><%= @event.name %></h1>
+  <div class="header-actions">
+    <%= link_to 'Edit', edit_admin_event_path(@event), class: 'btn btn-primary' %>
+    <%= link_to 'View History', versions_admin_event_path(@event), class: 'btn btn-secondary' %>
+    <%= link_to '← Back to Events', admin_events_path, class: 'btn btn-link' %>
+  </div>
+</div>
+
+<div class="event-details">
+  <div class="detail-section">
+    <h3>Location</h3>
+    <p><%= @event.location %></p>
+  </div>
+
+  <div class="detail-section">
+    <h3>Event Times</h3>
+    <% @event.event_times.each do |et| %>
+      <div class="time-display">
+        <strong><%= et.start_time.strftime('%A, %B %d, %Y') %></strong><br>
+        <%= et.start_time.strftime('%I:%M %p') %>
+        <% if et.end_time %>
+          - <%= et.end_time.strftime('%I:%M %p') %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="detail-section">
+    <h3>Description</h3>
+    <div class="markdown-content">
+      <%= simple_format(@event.description) %>
+    </div>
+  </div>
+
+  <% if @event.image_url.present? %>
+    <div class="detail-section">
+      <h3>Image</h3>
+      <img src="<%= @event.image_url %>" alt="<%= @event.name %>" class="event-preview-image">
+    </div>
+  <% end %>
+
+  <% if @event.registration_link.present? %>
+    <div class="detail-section">
+      <h3>Registration</h3>
+      <a href="<%= @event.registration_link %>" target="_blank"><%= @event.registration_link %></a>
+    </div>
+  <% end %>
+
+  <div class="detail-section">
+    <h3>Status</h3>
+    <span class="status-badge <%= @event.published ? 'published' : 'draft' %>">
+      <%= @event.published ? 'Published' : 'Draft' %>
+    </span>
+  </div>
+
+  <% if @versions.any? %>
+    <div class="detail-section">
+      <h3>Recent Changes</h3>
+      <ul class="version-summary">
+        <% @versions.first(5).each do |version| %>
+          <li>
+            <span class="version-action"><%= version.action_type.upcase %></span>
+            <%= version.formatted_timestamp %> by <%= version.changed_by %>
+            <% if version.change_summary.present? %>
+              <br><small><%= version.change_summary %></small>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+      <%= link_to 'View Full History →', versions_admin_event_path(@event) %>
+    </div>
+  <% end %>
+</div>

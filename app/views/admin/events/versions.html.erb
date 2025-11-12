@@ -1,0 +1,47 @@
+<!-- app/views/admin/events/versions.html.erb -->
+<div class="admin-header">
+  <h1>Version History: <%= @event.name %></h1>
+  <%= link_to '← Back to Event', admin_event_path(@event), class: 'btn btn-link' %>
+</div>
+
+<div class="versions-list">
+  <% @versions.each do |version| %>
+    <div class="version-card">
+      <div class="version-header">
+        <span class="version-badge <%= version.action_type %>">
+          <%= version.action_type.upcase %>
+        </span>
+        <span class="version-timestamp"><%= version.formatted_timestamp %></span>
+        <span class="version-author">by <%= version.changed_by %></span>
+      </div>
+      
+      <div class="version-body">
+        <% if version.change_summary.present? %>
+          <p class="change-summary"><%= version.change_summary %></p>
+        <% end %>
+        
+        <div class="version-details">
+          <strong><%= version.event_name %></strong> at <%= version.event_location %>
+          <div class="version-times">
+            <% version.event_times_snapshot.each do |time| %>
+              <div class="time-entry">
+                <%= Time.parse(time['start']).strftime('%b %d, %Y %I:%M %p') %>
+                <% if time['end'] %>
+                  - <%= Time.parse(time['end']).strftime('%I:%M %p') %>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      
+      <div class="version-actions">
+        <%= button_to 'Revert to This Version', 
+            revert_admin_event_path(@event, version_id: version.id), 
+            method: :post,
+            data: { confirm: 'Are you sure you want to revert to this version?' },
+            class: 'btn btn-sm btn-warning' %>
+      </div>
+    </div>
+  <% end %>
+</div>

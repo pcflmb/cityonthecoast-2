@@ -1,0 +1,19 @@
+<!-- app/views/admin/events/_event_time_fields.html.erb -->
+<div class="nested-fields event-time-fields">
+  <div class="form-row">
+    <div class="form-group col-md-5">
+      <%= f.label :start_time, 'Start Date & Time' %>
+      <%= f.datetime_local_field :start_time, class: 'form-control', required: true %>
+    </div>
+    
+    <div class="form-group col-md-5">
+      <%= f.label :end_time, 'End Date & Time (optional)' %>
+      <%= f.datetime_local_field :end_time, class: 'form-control' %>
+    </div>
+    
+    <div class="form-group col-md-2">
+      <%= f.hidden_field :position %>
+      <%= link_to_remove_association 'Remove', f, class: 'btn btn-sm btn-danger remove-time' %>
+    </div>
+  </div>
+</div>

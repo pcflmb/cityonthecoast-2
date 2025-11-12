@@ -1,0 +1,114 @@
+{
+  "events": [
+    {
+      "id": "st-peters-holiday-boutique",
+      "name": "St Peters Holiday Boutique",
+      "location": "700 Oddstad Blvd",
+      "description": "Join us for a festive holiday boutique featuring local artisans, crafts, and unique gift items. Find perfect gifts while supporting our community!\n\n**Sponsor:** St Peters Church\n\n**Contact:** Cher Na",
+      "image": "https://images.unsplash.com/photo-1543674892-7d64d45df18b?w=800&q=80",
+      "registrationLink": null,
+      "event_times": [
+        {
+          "start": "2025-11-02T10:00:00",
+          "end": "2025-11-02T14:00:00"
+        },
+        {
+          "start": "2025-11-03T09:30:00",
+          "end": "2025-11-03T13:00:00"
+        }
+      ]
+    },
+    {
+      "id": "pacifica-polar-palooza",
+      "name": "Pacifica Polar Palooza (includes Elf Market)",
+      "location": "540 Crespi Drive",
+      "description": "Kick off the holiday season with Pacifica's premier winter celebration! Enjoy Elf Market with local vendors, festive activities, live entertainment, and coastal holiday cheer. Perfect for families and friends.\n\n**Sponsor:** Pacifica Parks, Beaches, & Recreation\n\n**Contact:** L Macario, Susana Leslie",
+      "image": "https://images.unsplash.com/photo-1513297887119-d46091b24bfa?w=800&q=80",
+      "registrationLink": null,
+      "event_times": [
+        {
+          "start": "2025-12-05T18:00:00",
+          "end": "2025-12-05T21:00:00"
+        },
+        {
+          "start": "2025-12-06T10:00:00",
+          "end": "2025-12-06T16:00:00"
+        }
+      ]
+    },
+    {
+      "id": "rockaway-beach-tree-lighting",
+      "name": "Rockaway Beach Tree Lighting",
+      "location": "Rockaway Beach",
+      "description": "Experience the magic as we light up our coastal Christmas tree at Rockaway Beach! Join the community for this cherished holiday tradition with live music, hot cocoa, and festive cheer by the ocean. Watch the tree illuminate against the Pacific sunset.\n\n**Sponsor:** Pacifica Chamber\n\n**Contact:** Lynn Callo",
+      "image": "https://images.unsplash.com/photo-1512389142860-9c449e58a543?w=800&q=80",
+      "registrationLink": null,
+      "event_times": [
+        {
+          "start": "2025-12-07T16:00:00",
+          "end": "2025-12-07T19:00:00"
+        }
+      ]
+    },
+    {
+      "id": "seaside-merchants-second-saturday",
+      "name": "Seaside Merchants Second Saturday",
+      "location": "West Sharp Park",
+      "description": "Shop local and support Pacifica businesses at our monthly Second Saturday event! Discover unique gifts, special deals, and holiday treasures from our seaside merchants. Stroll through West Sharp Park and enjoy the coastal shopping experience.\n\n**Sponsor:** Seaside Merchants Association",
+      "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80",
+      "registrationLink": null,
+      "event_times": [
+        {
+          "start": "2025-12-13T11:00:00",
+          "end": "2025-12-13T16:00:00"
+        }
+      ]
+    },
+    {
+      "id": "winter-art-faire",
+      "name": "Winter Art Faire",
+      "location": "1220 Linda Mar Blvd",
+      "description": "Celebrate the season with local art! Browse and purchase original artwork, crafts, and handmade gifts from talented Pacifica artists. Perfect for finding one-of-a-kind holiday presents that support our creative community.\n\n**Sponsor:** Art Guild of Pacifica\n\n**Contact:** Kristina Ayala",
+      "image": "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=800&q=80",
+      "registrationLink": null,
+      "event_times": [
+        {
+          "start": "2025-12-13T11:00:00",
+          "end": "2025-12-13T17:00:00"
+        },
+        {
+          "start": "2025-12-14T11:00:00",
+          "end": "2025-12-14T17:00:00"
+        }
+      ]
+    },
+    {
+      "id": "pacific-pride-holiday-car-parade",
+      "name": "Pacific Pride Holiday Car Parade / Seaside Merchants Evening Hours",
+      "location": "West Sharp Park",
+      "description": "Watch decorated cars light up the streets in our festive holiday parade! Marvel at creatively lit vehicles cruising through town, then enjoy extended evening shopping hours with local merchants after the parade.\n\n🚗 Parade of lights • Extended merchant hours • Holiday spirit",
+      "image": "https://images.unsplash.com/photo-1576089172869-4f5f6f315620?w=800&q=80",
+      "registrationLink": null,
+      "event_times": [
+        {
+          "start": "2025-12-20T17:00:00",
+          "end": "2025-12-20T21:00:00"
+        }
+      ]
+    },
+    {
+      "id": "merry-manor",
+      "name": "Merry Manor",
+      "location": "Manor District",
+      "description": "Experience the magic of the Manor District transformed into a winter wonderland! Stroll through the neighborhood to enjoy spectacular holiday lights, festive decorations, and community celebration. A beloved Pacifica tradition!\n\n**Contact:** Kristina Ayala",
+      "image": "https://images.unsplash.com/photo-1482192596544-9eb780fc7f66?w=800&q=80",
+      "registrationLink": null,
+      "event_times": [
+        {
+          "start": "2025-12-21T17:00:00",
+          "end": "2025-12-21T21:00:00"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+<!-- app/views/admin/events/_form.html.erb -->
+<%= form_with(model: [:admin, @event], local: true, class: 'event-form') do |f| %>
+  <% if @event.errors.any? %>
+    <div class="error-messages">
+      <h3><%= pluralize(@event.errors.count, "error") %> prevented this event from being saved:</h3>
+      <ul>
+        <% @event.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :name, 'Event Name' %>
+    <%= f.text_field :name, class: 'form-control', required: true %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :location %>
+    <%= f.text_field :location, class: 'form-control', required: true %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :description %>
+    <%= f.text_area :description, class: 'form-control', rows: 6, 
+        placeholder: 'Supports markdown formatting' %>
+    <small class="form-text">Markdown supported: **bold**, *italic*, lists, etc.</small>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :image_url, 'Image URL' %>
+    <%= f.text_field :image_url, class: 'form-control', 
+        placeholder: 'https://example.com/image.jpg' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :registration_link, 'Registration Link (optional)' %>
+    <%= f.text_field :registration_link, class: 'form-control', 
+        placeholder: 'https://example.com/register' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :published %>
+    <%= f.check_box :published %>
+    <small class="form-text">Uncheck to save as draft</small>
+  </div>
+
+  <div class="form-section">
+    <h3>Event Times</h3>
+    <div id="event-times">
+      <%= f.fields_for :event_times do |time_fields| %>
+        <%= render 'admin/events/event_time_fields', f: time_fields %>
+      <% end %>
+    </div>
+    <%= link_to_add_association 'Add Another Time', f, :event_times, 
+        class: 'btn btn-secondary btn-sm',
+        data: { association_insertion_node: '#event-times', 
+                association_insertion_method: 'append' } %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit class: 'btn btn-primary' %>
+    <%= link_to 'Cancel', admin_events_path, class: 'btn btn-link' %>
+  </div>
+<% end %>
